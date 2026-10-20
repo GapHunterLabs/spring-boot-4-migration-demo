@@ -2,10 +2,10 @@ package dev.gaphunter.orders.config;
 
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.PropertyNamingStrategies;
+import tools.jackson.databind.json.JsonMapper;
 import java.time.Clock;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
  * The public API uses snake_case field names: existing clients (a billing system and a mobile app) parse them.
@@ -14,8 +14,8 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 public class JacksonConfig {
 
     @Bean
-    ObjectMapper objectMapper(Jackson2ObjectMapperBuilder builder) {
-        return builder.propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE).build();
+    ObjectMapper objectMapper() {
+        return JsonMapper.builder().propertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE).build();
     }
 
     @Bean
