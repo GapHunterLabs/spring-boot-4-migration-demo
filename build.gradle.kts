@@ -1,6 +1,6 @@
 plugins {
     java
-    id("org.springframework.boot") version "3.5.16"
+    id("org.springframework.boot") version "4.0.8"
     id("io.spring.dependency-management") version "1.1.7"
     id("org.openrewrite.rewrite") version "7.39.0"
 }
@@ -19,13 +19,16 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.flywaydb:flyway-core")
+    implementation("org.springframework.boot:spring-boot-starter-flyway")
     runtimeOnly("com.h2database:h2")
 
+    runtimeOnly("javax.xml.bind:jaxb-api:2.3.1")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test:4.0.8")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:3.37.0"))

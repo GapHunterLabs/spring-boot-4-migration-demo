@@ -11,7 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -54,7 +54,7 @@ class OrderApiContractTest {
         if (!expected.strip().equals(actual.strip())) {
             Path out = Path.of("build", "contract-actual", contractFile);
             Files.createDirectories(out.getParent());
-            Files.writeString(out, actual, StandardCharsets.UTF_8);
+            Files.writeString(out, actual);
         }
         assertThat(actual.strip()).isEqualTo(expected.strip());
     }
