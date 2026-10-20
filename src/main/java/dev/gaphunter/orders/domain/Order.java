@@ -1,5 +1,6 @@
 package dev.gaphunter.orders.domain;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,8 +12,13 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
+/**
+ * The JSON field order is part of the public contract, so it is fixed here instead of left to the JSON library's
+ * defaults (Jackson 3 sorts properties alphabetically and puts constructor parameters first).
+ */
 @Entity
 @Table(name = "orders")
+@JsonPropertyOrder({"id", "customerName", "total", "status", "createdAt"})
 public class Order {
 
     @Id
