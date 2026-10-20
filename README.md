@@ -30,3 +30,7 @@ without a starter, `@MockBean`, `TestRestTemplate` with `@SpringBootTest`.
 ```
 
 Requires Java 21. The Gradle wrapper is included.
+
+## License
+
+Apache License 2.0. See [LICENSE](LICENSE).
