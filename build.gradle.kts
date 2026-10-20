@@ -1,8 +1,7 @@
 plugins {
     java
-    id("org.springframework.boot") version "4.0.8"
+    id("org.springframework.boot") version "4.1.1"
     id("io.spring.dependency-management") version "1.1.7"
-    id("org.openrewrite.rewrite") version "7.39.0"
 }
 
 group = "dev.gaphunter"
@@ -29,13 +28,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-resttestclient")
     testImplementation("org.springframework.boot:spring-boot-restclient")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:3.37.0"))
-    rewrite("org.openrewrite.recipe:rewrite-spring")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0")
 }
 
 tasks.test {
