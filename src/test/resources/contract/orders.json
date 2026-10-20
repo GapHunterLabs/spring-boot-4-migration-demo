@@ -1,0 +1,1 @@
+[{"id":1,"customer_name":"Caf\u00E9 \u00D1and\u00FA","total":120.50,"status":"PAID","created_at":"2026-09-01T10:15:00Z"},{"id":2,"customer_name":"Northwind Traders","total":89.90,"status":"SHIPPED","created_at":"2026-09-02T16:40:00Z"},{"id":3,"customer_name":"M\u00FCller & S\u00F6hne","total":15.00,"status":"NEW","created_at":"2026-09-03T08:05:00Z"}]

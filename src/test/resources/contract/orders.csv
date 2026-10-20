@@ -1,0 +1,4 @@
+id,customer_name,total,status
+1,"Café Ñandú",120.50,PAID
+2,"Northwind Traders",89.90,SHIPPED
+3,"Müller & Söhne",15.00,NEW
